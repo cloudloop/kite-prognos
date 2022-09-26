@@ -1,3 +1,4 @@
+from ast import Continue
 from textwrap import indent
 from pip._vendor import requests
 import json
@@ -39,22 +40,6 @@ for j in range(len(data["timeSeries"])):
     weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
     #print(f"{time}: {weatherDict[time]}\n")
 
-print(weatherDict)
-print(type(weatherDict))
-print(weatherDict["2022-10-06T00:00:00Z"]["ws"])
-print(" GOOOOOO KITESURF  at:  " + [time for time in weatherDict if weatherDict[time]["ws"] > 6 and weatherDict[time]["wd"] > 50 and weatherDict[time]["wd"] < 100][0])
-
 #Conditional review of weatherdict to identify potential kitesurf dates
-
-"""
-weatherDict={}
-for allTimes in range(len(data["timeSeries"])):
-    print(allTimes)
-    time = data["timeSeries"][allTimes]["validTime"]
-    wd = data["timeSeries"][allTimes]["parameters"][13]["values"][0]
-    ws = data["timeSeries"][allTimes]["parameters"][14]["values"][0]
-    gust = data["timeSeries"][allTimes]["parameters"][17]["values"][0]
-    wsymb2 = data["timeSeries"][allTimes]["parameters"][18]["values"][0]
-    weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
-print(json.dumps(weatherDict, indent=4))
-"""
+kitetimes = [time for time in weatherDict if weatherDict[time]["ws"] > 5 and weatherDict[time]["wd"] > 0 and weatherDict[time]["wd"] < 100]
+[print(f"Lets KIIIITESURF at:   {time}") for time in kitetimes]
