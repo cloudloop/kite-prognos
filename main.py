@@ -15,8 +15,8 @@ lat = 18
 #Setting up API call function for SMHI forcast on location
 #See https://opendata.smhi.se/apidocs/metfcst/parameters.html
 smhi_url = "https://opendata-download-metfcst.smhi.se"
-Sthlm_Lat = "59.368718"
-Sthlm_Lon = "18.200225"
+Sthlm_Lat = str(lon)
+Sthlm_Lon = str(lat)
 full_url = smhi_url+f"/api/category/pmp3g/version/2/geotype/point/lon/{Sthlm_Lon}/lat/{Sthlm_Lat}/data.json"
 response = requests.get(full_url, verify=False)
 status = response.raise_for_status()
@@ -39,6 +39,8 @@ for j in range(len(data["timeSeries"])):
     wsymb2 = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "Wsymb2"][0]
     weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
     #print(f"{time}: {weatherDict[time]}\n")
+with open("localWindForcast.json","w") as f:
+    f.write(json.dumps(weatherDict,indent=4))
 
 #Conditional review of weatherdict to identify potential kitesurf dates
 kitetimes = [time for time in weatherDict if weatherDict[time]["ws"] > 5 and weatherDict[time]["wd"] > 0 and weatherDict[time]["wd"] < 100]
