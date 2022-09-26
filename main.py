@@ -27,16 +27,19 @@ with open("response.json","w") as f:
 
 #Finding position of values of interest: 
 #According to docs, looking for name=ws, wd, gust and wsymb2
-#print(data["timeSeries"][i]["parameters[j]), where i = timeSeries and j = order for w/wd/gust etc
-print(f'{data["timeSeries"][0]["parameters"][13]["name"]} {data["timeSeries"][0]["parameters"][13]["values"]}')
-print(f'{data["timeSeries"][0]["parameters"][14]["name"]} {data["timeSeries"][0]["parameters"][14]["values"]}')
-print(f'{data["timeSeries"][0]["parameters"][17]["name"]} {data["timeSeries"][0]["parameters"][17]["values"]}')
-print(f'{data["timeSeries"][0]["parameters"][18]["name"]} {data["timeSeries"][0]["parameters"][18]["values"]}')
-#j-values for our wanted values:
-#wd: 13, ws: 14, gust: 17, wsymb2: 18
 
-print(len(data["timeSeries"]))
-
+#Fetching data for variable positions of wd, ws, gust, wsymb2 in fetched json
+weatherDict={}
+for j in range(len(data["timeSeries"])):
+    time = data["timeSeries"][j]["validTime"]
+    wd = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "wd"][0]
+    ws = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "ws"][0]
+    gust = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "gust"][0]
+    wsymb2 = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "Wsymb2"][0]
+    weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
+    print(f"{time}: {weatherDict[time]}\n")
+#print(json.dumps(weatherDict, indent=4))
+"""
 weatherDict={}
 for allTimes in range(len(data["timeSeries"])):
     print(allTimes)
@@ -47,4 +50,4 @@ for allTimes in range(len(data["timeSeries"])):
     wsymb2 = data["timeSeries"][allTimes]["parameters"][18]["values"][0]
     weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
 print(json.dumps(weatherDict, indent=4))
-
+"""
