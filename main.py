@@ -17,14 +17,17 @@ Sthlm_Lat = "59.368718"
 Sthlm_Lon = "18.200225"
 full_url = smhi_url+f"/api/category/pmp3g/version/2/geotype/point/lon/{Sthlm_Lon}/lat/{Sthlm_Lat}/data.json"
 response = requests.get(full_url, verify=False)
-response.raise_for_status()
-with open("response.json","w") as file:
+status = response.raise_for_status()
+print(status)
+with open("response.json","w") as f:
     data = response.json()
-    file = data
-    #Printing readable version of json data. 
-    #print(json.dumps(data, indent=4))
+    f.write(json.dumps(data, indent=4))
 
-with open("response.json","r") as file:
-    
+with open("response.json","r") as f:
+    g = f.read()
+    h = json.dumps(g)
+    i = h["timeSeries"]
+    print(type(h))
+
 
 
