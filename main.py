@@ -23,7 +23,7 @@ status = response.raise_for_status()
 data = response.json()
 
 #Saving local file with indent to better analys json response.
-with open("response.json","w") as f:
+with open(f"responses/responseLon{lon}Lat{lat}.json","w") as f:
     f.write(json.dumps(data,indent=4))
 
 #Finding position of values of interest: 
@@ -39,7 +39,7 @@ for j in range(len(data["timeSeries"])):
     wsymb2 = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "Wsymb2"][0]
     weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
     #print(f"{time}: {weatherDict[time]}\n")
-with open("localWindForcast.json","w") as f:
+with open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","w") as f:
     f.write(json.dumps(weatherDict,indent=4))
 
 #Conditional review of weatherdict to identify potential kitesurf dates
