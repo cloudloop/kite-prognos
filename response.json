@@ -1,6 +1,6 @@
 {
-    "approvedTime": "2022-09-26T11:05:27Z",
-    "referenceTime": "2022-09-26T11:00:00Z",
+    "approvedTime": "2022-09-26T12:05:29Z",
+    "referenceTime": "2022-09-26T12:00:00Z",
     "geometry": {
         "type": "Point",
         "coordinates": [
@@ -11,182 +11,6 @@
         ]
     },
     "timeSeries": [
-        {
-            "validTime": "2022-09-26T12:00:00Z",
-            "parameters": [
-                {
-                    "name": "spp",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "percent",
-                    "values": [
-                        0
-                    ]
-                },
-                {
-                    "name": "pcat",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "category",
-                    "values": [
-                        3
-                    ]
-                },
-                {
-                    "name": "pmin",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.2
-                    ]
-                },
-                {
-                    "name": "pmean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.5
-                    ]
-                },
-                {
-                    "name": "pmax",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.8
-                    ]
-                },
-                {
-                    "name": "pmedian",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.5
-                    ]
-                },
-                {
-                    "name": "tcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        8
-                    ]
-                },
-                {
-                    "name": "lcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        8
-                    ]
-                },
-                {
-                    "name": "mcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        8
-                    ]
-                },
-                {
-                    "name": "hcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        8
-                    ]
-                },
-                {
-                    "name": "t",
-                    "levelType": "hl",
-                    "level": 2,
-                    "unit": "Cel",
-                    "values": [
-                        11.8
-                    ]
-                },
-                {
-                    "name": "msl",
-                    "levelType": "hmsl",
-                    "level": 0,
-                    "unit": "hPa",
-                    "values": [
-                        999.7
-                    ]
-                },
-                {
-                    "name": "vis",
-                    "levelType": "hl",
-                    "level": 2,
-                    "unit": "km",
-                    "values": [
-                        8.3
-                    ]
-                },
-                {
-                    "name": "wd",
-                    "levelType": "hl",
-                    "level": 10,
-                    "unit": "degree",
-                    "values": [
-                        139
-                    ]
-                },
-                {
-                    "name": "ws",
-                    "levelType": "hl",
-                    "level": 10,
-                    "unit": "m/s",
-                    "values": [
-                        5.0
-                    ]
-                },
-                {
-                    "name": "r",
-                    "levelType": "hl",
-                    "level": 2,
-                    "unit": "percent",
-                    "values": [
-                        91
-                    ]
-                },
-                {
-                    "name": "tstm",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "percent",
-                    "values": [
-                        4
-                    ]
-                },
-                {
-                    "name": "gust",
-                    "levelType": "hl",
-                    "level": 10,
-                    "unit": "m/s",
-                    "values": [
-                        9.4
-                    ]
-                },
-                {
-                    "name": "Wsymb2",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "category",
-                    "values": [
-                        19
-                    ]
-                }
-            ]
-        },
         {
             "validTime": "2022-09-26T13:00:00Z",
             "parameters": [
@@ -214,7 +38,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.2
+                        0.0
                     ]
                 },
                 {
@@ -223,7 +47,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.5
+                        0.0
                     ]
                 },
                 {
@@ -232,7 +56,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.8
+                        0.1
                     ]
                 },
                 {
@@ -241,7 +65,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.5
+                        0.0
                     ]
                 },
                 {
@@ -286,7 +110,7 @@
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        12.3
+                        11.8
                     ]
                 },
                 {
@@ -358,7 +182,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        19
+                        6
                     ]
                 }
             ]
@@ -390,7 +214,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.4
+                        0.0
                     ]
                 },
                 {
@@ -399,7 +223,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.6
+                        0.0
                     ]
                 },
                 {
@@ -408,7 +232,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.9
+                        0.1
                     ]
                 },
                 {
@@ -417,7 +241,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.7
+                        0.0
                     ]
                 },
                 {
@@ -462,7 +286,7 @@
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        12.1
+                        11.6
                     ]
                 },
                 {
@@ -534,7 +358,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        19
+                        6
                     ]
                 }
             ]
@@ -566,7 +390,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.3
+                        0.0
                     ]
                 },
                 {
@@ -575,7 +399,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.5
+                        0.0
                     ]
                 },
                 {
@@ -584,7 +408,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.9
+                        0.1
                     ]
                 },
                 {
@@ -593,7 +417,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.5
+                        0.0
                     ]
                 },
                 {
@@ -638,7 +462,7 @@
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        12.0
+                        11.8
                     ]
                 },
                 {
@@ -710,7 +534,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        19
+                        6
                     ]
                 }
             ]
@@ -751,7 +575,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.4
+                        0.0
                     ]
                 },
                 {
@@ -760,7 +584,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.9
+                        0.2
                     ]
                 },
                 {
@@ -769,7 +593,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.3
+                        0.0
                     ]
                 },
                 {
@@ -814,7 +638,7 @@
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        11.6
+                        11.4
                     ]
                 },
                 {
@@ -886,7 +710,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        18
+                        6
                     ]
                 }
             ]
@@ -900,7 +724,7 @@
                     "level": 0,
                     "unit": "percent",
                     "values": [
-                        0
+                        -9
                     ]
                 },
                 {
@@ -909,7 +733,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        3
+                        0
                     ]
                 },
                 {
@@ -927,7 +751,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.2
+                        0.0
                     ]
                 },
                 {
@@ -936,7 +760,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.5
+                        0.0
                     ]
                 },
                 {
@@ -945,7 +769,7 @@
                     "level": 0,
                     "unit": "kg/m2/h",
                     "values": [
-                        0.2
+                        0.0
                     ]
                 },
                 {
@@ -990,7 +814,7 @@
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        11.1
+                        10.6
                     ]
                 },
                 {
@@ -1062,7 +886,7 @@
                     "level": 0,
                     "unit": "category",
                     "values": [
-                        18
+                        6
                     ]
                 }
             ]
@@ -1071,12 +895,102 @@
             "validTime": "2022-09-26T18:00:00Z",
             "parameters": [
                 {
+                    "name": "spp",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "percent",
+                    "values": [
+                        -9
+                    ]
+                },
+                {
+                    "name": "pcat",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "category",
+                    "values": [
+                        0
+                    ]
+                },
+                {
+                    "name": "pmin",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "kg/m2/h",
+                    "values": [
+                        0.0
+                    ]
+                },
+                {
+                    "name": "pmean",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "kg/m2/h",
+                    "values": [
+                        0.0
+                    ]
+                },
+                {
+                    "name": "pmax",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "kg/m2/h",
+                    "values": [
+                        0.0
+                    ]
+                },
+                {
+                    "name": "pmedian",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "kg/m2/h",
+                    "values": [
+                        0.0
+                    ]
+                },
+                {
+                    "name": "tcc_mean",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "octas",
+                    "values": [
+                        8
+                    ]
+                },
+                {
+                    "name": "lcc_mean",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "octas",
+                    "values": [
+                        3
+                    ]
+                },
+                {
+                    "name": "mcc_mean",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "octas",
+                    "values": [
+                        7
+                    ]
+                },
+                {
+                    "name": "hcc_mean",
+                    "levelType": "hl",
+                    "level": 0,
+                    "unit": "octas",
+                    "values": [
+                        7
+                    ]
+                },
+                {
                     "name": "t",
                     "levelType": "hl",
                     "level": 2,
                     "unit": "Cel",
                     "values": [
-                        11.2
+                        10.2
                     ]
                 },
                 {
@@ -1134,102 +1048,12 @@
                     ]
                 },
                 {
-                    "name": "tcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        8
-                    ]
-                },
-                {
-                    "name": "lcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        3
-                    ]
-                },
-                {
-                    "name": "mcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        7
-                    ]
-                },
-                {
-                    "name": "hcc_mean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "octas",
-                    "values": [
-                        7
-                    ]
-                },
-                {
                     "name": "gust",
                     "levelType": "hl",
                     "level": 10,
                     "unit": "m/s",
                     "values": [
                         4.3
-                    ]
-                },
-                {
-                    "name": "pmin",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.0
-                    ]
-                },
-                {
-                    "name": "pmax",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.0
-                    ]
-                },
-                {
-                    "name": "spp",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "percent",
-                    "values": [
-                        -9
-                    ]
-                },
-                {
-                    "name": "pcat",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "category",
-                    "values": [
-                        0
-                    ]
-                },
-                {
-                    "name": "pmean",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.0
-                    ]
-                },
-                {
-                    "name": "pmedian",
-                    "levelType": "hl",
-                    "level": 0,
-                    "unit": "kg/m2/h",
-                    "values": [
-                        0.0
                     ]
                 },
                 {
@@ -1247,21 +1071,21 @@
             "validTime": "2022-09-26T19:00:00Z",
             "parameters": [
                 {
+                    "name": "t",
+                    "levelType": "hl",
+                    "level": 2,
+                    "unit": "Cel",
+                    "values": [
+                        10.4
+                    ]
+                },
+                {
                     "name": "msl",
                     "levelType": "hmsl",
                     "level": 0,
                     "unit": "hPa",
                     "values": [
                         1000.1
-                    ]
-                },
-                {
-                    "name": "t",
-                    "levelType": "hl",
-                    "level": 2,
-                    "unit": "Cel",
-                    "values": [
-                        11.6
                     ]
                 },
                 {

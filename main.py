@@ -37,8 +37,15 @@ for j in range(len(data["timeSeries"])):
     gust = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "gust"][0]
     wsymb2 = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "Wsymb2"][0]
     weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
-    print(f"{time}: {weatherDict[time]}\n")
-#print(json.dumps(weatherDict, indent=4))
+    #print(f"{time}: {weatherDict[time]}\n")
+
+print(weatherDict)
+print(type(weatherDict))
+print(weatherDict["2022-10-06T00:00:00Z"]["ws"])
+print(" GOOOOOO KITESURF  at:  " + [time for time in weatherDict if weatherDict[time]["ws"] > 6 and weatherDict[time]["wd"] > 50 and weatherDict[time]["wd"] < 100][0])
+
+#Conditional review of weatherdict to identify potential kitesurf dates
+
 """
 weatherDict={}
 for allTimes in range(len(data["timeSeries"])):
