@@ -1,5 +1,6 @@
 from ast import Continue
 from textwrap import indent
+from time import time
 from pip._vendor import requests
 import json
 
@@ -40,6 +41,7 @@ def cherryPickData(data):
         wsymb2 = [data["timeSeries"][j]["parameters"][i]["values"][0] for i in range(len(data["timeSeries"][j]["parameters"])) if data["timeSeries"][j]["parameters"][i]["name"] == "Wsymb2"][0]
         weatherDict[time] = {"wd": wd, "ws": ws, "gust": gust, "wsymb2": wsymb2}
         #print(f"{time}: {weatherDict[time]}\n")
+    return weatherDict
 
 def saveCherryPick(lon,lat,weatherD):
     with open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","w") as f:
