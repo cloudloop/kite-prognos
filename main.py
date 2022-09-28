@@ -1,16 +1,18 @@
 from ast import Continue
+from genericpath import isfile
 from textwrap import indent
 from time import time
 from pip._vendor import requests
 import json
+from pathlib import Path
 
 ###
 #Link to documentation https://opendata.smhi.se/apidocs/metfcst/get-forecast.html
 ###
 
 #Point of interest: Enter location you want forcast for
-lon = 59.59
-lat = 18.50
+lon = 59.999
+lat = 18.999
 
 def apiCall(lon,lat):
     #Setting up API call function for SMHI forcast on location
@@ -47,19 +49,36 @@ def saveCherryPick(lon,lat,weatherD):
     with open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","w") as f:
         f.write(json.dumps(weatherD,indent=4))
 
-"""def checkSaveRes(lon,lat):
-    if open(f"responses/responseLon{lon}Lat{lat}.json","r"):
+def checkSaveRes(lon,lat):
+    print("Checking saves...")
+    file = Path(f"responses/responseLon{lon}Lat{lat}.json")
+    if file.exists():
+        print("A json file exists!!")
+        return True
 
-def checkSaveLWF(lon,lat):
-    if open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","r"):
-"""
+def getSavedLWF(lon,lat):
+    with open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","r") as f:
+        data = json.loads(f.read())
+        print(data.keys())
+        return data
+
 def findKitesurfDays(weatherDict):
     #Conditional review of weatherdict to identify potential kitesurf dates
-    kitetimes = [time for time in weatherDict if weatherDict[time]["ws"] > 5 and weatherDict[time]["wd"] > 0 and weatherDict[time]["wd"] < 100]
-    [print(f"Lets KIIIITESURF at:   {time}") for time in kitetimes]
+    kitetimes = [time for time in weatherDict if weatherDict[time]["ws"] > 6 and weatherDict[time]["wd"] > 0 and weatherDict[time]["wd"] < 100]
+    [print(f"Lets KIIIITESURF at:   {time} (ws={weatherDict[time]['ws']}, wd={weatherDict[time]['wd']})") for time in kitetimes]
 
-if True:
+def makeAPIcall(lon,lat):
     data = apiCall(lon,lat)
     saveData(lon,lat,data)
     wd = cherryPickData(data)
+    saveCherryPick(lon,lat,wd)
     findKitesurfDays(wd)
+
+#Creating a conditional function that checks if 1. There is a saved file available, and 2. if said file is the most current. If true on both, will make calculations based on saved file 
+#instead of fetching new API data. 
+if checkSaveRes(lon,lat):
+    print("Save is available. Fetching...")
+    data = getSavedLWF(lon,lat)
+    findKitesurfDays(data)
+else:
+    makeAPIcall(lon,lat)
