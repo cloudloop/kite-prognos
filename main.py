@@ -5,14 +5,15 @@ from time import time
 from pip._vendor import requests
 import json
 from pathlib import Path
+from datetime import datetime
 
 ###
 #Link to documentation https://opendata.smhi.se/apidocs/metfcst/get-forecast.html
 ###
 
 #Point of interest: Enter location you want forcast for
-lon = 59.999
-lat = 18.999
+lon = 59
+lat = 18
 
 def apiCall(lon,lat):
     #Setting up API call function for SMHI forcast on location
@@ -59,7 +60,6 @@ def checkSaveRes(lon,lat):
 def getSavedLWF(lon,lat):
     with open(f"localWindForcast/lwf-Lon{lon}Lat{lat}.json","r") as f:
         data = json.loads(f.read())
-        print(data.keys())
         return data
 
 def findKitesurfDays(weatherDict):
@@ -69,8 +69,8 @@ def findKitesurfDays(weatherDict):
 
 def makeAPIcall(lon,lat):
     data = apiCall(lon,lat)
-    saveData(lon,lat,data)
     wd = cherryPickData(data)
+    saveData(lon,lat,data)
     saveCherryPick(lon,lat,wd)
     findKitesurfDays(wd)
 
@@ -82,3 +82,9 @@ if checkSaveRes(lon,lat):
     findKitesurfDays(data)
 else:
     makeAPIcall(lon,lat)
+
+t = '2022-09-28T20:00:00Z'
+dt_obj = datetime.fromisoformat('2020-01-06T00:00:00.000Z'[:-1] + '+00:00')
+dt2 = datetime.datetime(2020, 1, 6, 0, 0, tzinfo=datetime.timezone.utc)
+print([dt_obj, type(dt_obj)])
+print([dt2, type(dt2)])
