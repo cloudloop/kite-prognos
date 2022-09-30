@@ -15,18 +15,29 @@ controls
 
 #Point of interest: Enter location you want forcast for. Points must be available to find through geopy. 
 #Spelling is important! 
-spots = ["Schweizerbadet Dalarö","Stenstrand Nynäshamn"]
+spots = ["Schweizerbadet Dalarö", "Stenstrand Nynäshamn", "Falun Sweden", "Helsingborg Sweden"]
 spotDict = {}
 geolocator = Nominatim(user_agent="kite-prog")
 for spot in spots:
-    print(spot)
-    location = geolocator.geocode(spot)
-    lon = int(round(location.latitude,6))
-    lat = int(round(location.longitude,6))
-    spotDict[spot] = {"lon": lon, "lat": lat}
+    with open("spotDB.json","w") as f:
+        try:
+            spotDict[spot]
+        except KeyError:
+            with open("spotDB.json","w") as f:
+                location = geolocator.geocode(spot)
+                lat = location.latitude
+                lon = location.longitude
+                spotDict[spot] = {"lon": lon, "lat": lat}
+                f.write(json.dumps(spotDict,indent=4))
 
-with open("spotDB.json","w") as f:
-    f.write(json.dumps(spotDict, indent=4))
+#Choost what Lon/Lat to use.
+with open("spotDB.json","r") as f:
+    data = json.load(f)
+    lat = data["Schweizerbadet Dalarö"]["lat"]
+    lon = data["Schweizerbadet Dalarö"]["lon"]
+
+"""with open("spotDB.json","w") as f:
+    f.write(json.dumps(spotDict, indent=4))"""
 
 
 #Creating a conditional function that checks if 1. There is a saved file available, and 2. if said file is the most current. If true on both, will make calculations based on saved file 

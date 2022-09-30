@@ -1,10 +1,18 @@
 {
     "Schweizerbadet Dalar\u00f6": {
-        "lon": 59,
-        "lat": 18
+        "lon": 18.394910166593096,
+        "lat": 59.139361050000005
     },
     "Stenstrand Nyn\u00e4shamn": {
-        "lon": 58,
-        "lat": 17
+        "lon": 17.8090381,
+        "lat": 58.8004911
+    },
+    "Falun Sweden": {
+        "lon": 15.6323059,
+        "lat": 60.6070068
+    },
+    "Helsingborg Sweden": {
+        "lon": 12.703706,
+        "lat": 56.0442098
     }
 }

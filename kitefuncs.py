@@ -11,8 +11,8 @@ def apiCall(lon,lat):
     #Setting up API call function for SMHI forcast on location
     #See https://opendata.smhi.se/apidocs/metfcst/parameters.html
     smhi_url = "https://opendata-download-metfcst.smhi.se"
-    Sthlm_Lat = str(lon)
-    Sthlm_Lon = str(lat)
+    Sthlm_Lat = str(int(lat))
+    Sthlm_Lon = str(int(lon))
     full_url = smhi_url+f"/api/category/pmp3g/version/2/geotype/point/lon/{Sthlm_Lon}/lat/{Sthlm_Lat}/data.json"
     response = requests.get(full_url, verify=False)
     status = response.raise_for_status()
