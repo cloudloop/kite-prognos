@@ -1,4 +1,5 @@
 import os
+import shutil
 
 #Setting up controls file as multiple errors have occured during developement
 print("Controlling folder setup..")
@@ -11,9 +12,9 @@ if os.path.exists("localWindForcast") == False:
     print("Creating directories...")
     
 def deleteAll():
-    print("Removing directories....")
-    os.rmdir("responses")
-    os.rmdir("localWindForcast")
+    print("Removing files and directories....")
+    shutil.rmtree("responses")
+    shutil.rmtree("localWindForcast")
     print("Done!")
     
 print("All good! Initliazing..")
