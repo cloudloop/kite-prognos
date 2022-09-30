@@ -19,3 +19,15 @@ if k.checkSaveRes(lon,lat):
     k.findKitesurfDays(data)
 else:
     k.makeAPIcall(lon,lat)
+    
+print(f"\nTime experiement starts here")
+tt = "2022-09-28T21:00:00Z"
+t = str(datetime.now())
+print(t)
+pattern = r"[-:.TZ ]"
+t1 = re.split(pattern, t)
+print(t1)
+t1 = t1[:-1]
+t2 = [int(t) for t in t1]
+dt = date(t2[0],t2[1],t2[2])
+print(dt)
