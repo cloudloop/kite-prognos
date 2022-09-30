@@ -1,11 +1,6 @@
-from ast import Continue
-from genericpath import isfile
-from textwrap import indent
-from time import time
-from pip._vendor import requests
-import json
-from pathlib import Path
 import kitefuncs as k
+from datetime import datetime, date
+import re
 
 #Point of interest: Enter location you want forcast for
 lon = 63
@@ -30,4 +25,5 @@ print(t1)
 t1 = t1[:-1]
 t2 = [int(t) for t in t1]
 dt = date(t2[0],t2[1],t2[2])
-print(dt)
+tdy = date.today()
+print(dt,tdy)
