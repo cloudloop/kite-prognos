@@ -10,7 +10,6 @@ lon = int(round(location.latitude,6))
 lat = int(round(location.longitude,6))
 
 
-
 #Creating a conditional function that checks if 1. There is a saved file available, and 2. if said file is the most current. If true on both, will make calculations based on saved file 
 #instead of fetching new API data. 
 if k.checkSaveRes(lon,lat):
@@ -19,7 +18,8 @@ if k.checkSaveRes(lon,lat):
     k.findKitesurfDays(data)
 else:
     k.makeAPIcall(lon,lat)
-    
+
+
 print(f"\nTime experiement starts here")
 tt = "2022-09-28T21:00:00Z"
 t = str(datetime.now())
